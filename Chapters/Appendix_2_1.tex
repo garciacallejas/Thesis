@@ -1,0 +1,235 @@
+%************************************************
+\chapter[Appendix 2.1: Chapter 2 - Model parameterizations]{Appendix 2.1: Chapter 2 - Case study model parameterizations and procedure}\label{ch:Appendix2.1}
+%************************************************
+
+\renewcommand{\thefigure}{A.2.1.\arabic{figure}}
+\setcounter{figure}{0}
+
+\renewcommand{\thetable}{A.2.1.\arabic{table}}
+\setcounter{table}{0}
+
+\section*{Expanded Food Web}
+
+The model is of the form:
+
+\begin{equation}
+\frac{dN_x}{dt} = r_x N_x - m_x N_x^2 + \sum_{y \in S, y \neq x} a_{xy} N_x N_y
+\end{equation}
+
+where $S$ is the set of species. Non-trophic interactions (NTI) may affect the growth rate $r_x$, mortality rate $m_x$ or interaction strength $a_{xy}$ terms. The ones included in our model are, respectively:
+
+\subsection*{growth rates}
+
+\begin{equation}
+r_{CM} = \frac{r_{CM}^{NTI}N_{PL} + r_{CM}^{0}N_{PL}^{0}}{N_{PL} + N_{PL}^0}
+\end{equation}
+
+\begin{equation}
+r_{DP} = \frac{r_{DP}^{NTI}N_{HM} + r_{DP}^{0}N_{HM}^{0}}{N_{HM} + N_{HM}^0}
+\end{equation}
+
+\begin{equation}
+r_{PL} = \frac{r_{PL}^{NTI}(N_{CM}+N_{HM}+N_{PLe}) + r_{PL}^{0}(N_{CM}^{0}+N_{HM}^{0}+N_{PLe}^{0})}{(N_{CM}+N_{HM}+N_{PLe})+(N_{CM}^{0}+N_{HM}^{0}+N_{PLe}^{0})}
+\end{equation}
+
+\begin{equation}
+r_{PLe} = \frac{r_{PLe}^{NTI}N_{PL} + r_{PLe}^{0}N_{PL}^{0}}{N_{PL} + N_{PL}^0}
+\end{equation}
+
+\subsection*{mortality rates}
+
+\begin{equation}
+m_{HM} = \frac{m_{HM}^{NTI}N_{SV} + m_{HM}^{0}N_{SV}^{0}}{N_{SV} + N_{SV}^0}
+\end{equation}
+
+\subsection*{interaction terms}
+
+\begin{equation}
+a_{PL,DP} = \frac{a_{PL,DP}^{NTI}N_{HM} + a_{PL,DP}^{0}N_{HM}^{0}}{N_{HM} + N_{HM}^0}
+\end{equation}
+
+\begin{equation}
+a_{DP,PL} = \frac{a_{DP,PL}^{NTI}N_{HM} + a_{DP,PL}^{0}N_{HM}^{0}}{N_{HM} + N_{HM}^0}
+\end{equation}
+
+We performed two sets of simulations, with and without non-trophic interactions (NTI henceforth). In the simulation without NTI, we assumed that \textit{Podarcis lilfordi} (PL) consumed seeds of \textit{Helicodiceros muscivorus} (HM), \textit{Pistacia lentiscus} (Ple) and \textit{Chritmum maritimum} (CM); these interactions were modelled as mutualisms in the NTI simulation, with the presence of PL individuals increasing the growth rate of each associated plant species. Each simulation was replicated 100000 times for 2500 timesteps. In the main text we report the aggregated results of the 100000 replicates. Each parameter was assigned a minimum and maximum value, and in each replicate parameter values were taken randomly from these intervals.
+
+Parameter ranges for the simulation without NTIs:
+
+Growth and mortality rates:
+
+%\[
+\begin{align*}
+& r_{FT} = [-0.01,-0.001] \\
+& r_{PL} = [0.01,0.1] \\
+& r_{DP} = [0.4,0.6] \\
+& r_{SV} = [0.05,0.15] \\
+& r_{HM} = [0.15,0.25] \\
+& r_{PLe} = [0.05,0.15] \\
+& r_{CM} = [0.15,0.25] \\
+& m_{FT} = [0.0001,0.0015] \\
+& m_{PL} = [0.0001,0.0015] \\
+& m_{DP} = [0.0005,0.0015] \\
+& m_{SV} = [0.0005,0.0015] \\
+& m_{HM} = [0.0005,0.0015] \\
+& m_{PLe} = [0.0002,0.0004] \\
+& m_{CM} = [0.00005,0.00015] \\
+\end{align*}
+%\]
+
+Interaction coefficients $\neq 0$:
+
+\begin{align*}
+& a_{FT,PL} = [10^{-6},10^{-4}] \\
+& a_{PL,FT} = [-10^{-2},-10^{-4}] \\
+& a_{PL,DP} = [10^{-4},10^{-2}] \\
+& a_{PL,HM} = [10^{-6},10^{-4}] \\
+& a_{PL,PLe} = [10^{-7},10^{-5}] \\
+& a_{PL,CM} = [10^{-7},10^{-5}] & \\
+& a_{DP,PL} = [-10^{-5},-10^{-7}] \\
+& a_{DP,HM} = [10^{-6},10^{-4}] \\
+& a_{HM,PL} = [-10^{-6},-10^{-8}] \\
+& a_{HM,DP} = [-10^{-6},-10^{-8}] \\
+& a_{PLe,PL} = [-10^{-6},-10^{-8}] \\
+& a_{CM,PL} = [-10^{-6},-10^{-8}] \\
+\end{align*}
+
+Initial abundances:
+
+\begin{align*}
+& N_{FT} = 8 \\
+& N_{PL} = 5000 \\
+& N_{DP} = 200 \\
+& N_{SV} = 5000 \\
+& N_{HM} = 5000 \\
+& N_{PLe} = 200 \\
+& N_{CM} = 5000 \\
+\end{align*}
+
+Parameter ranges for the simulation with NTIs. Parameters without superscript are not affected by NTIs. Parameters with superscript 0 indicate values in the absence of NTI, i.e. when one of the interacting species is not present. Parameters with superscript NTI indicate the maximum value that the parameter can reach with NTI:
+
+\begin{align*}
+& r_{FT} = [-0.01,-0.001] \\
+& r_{PL}^0 = [0.01,0.1] \\
+& r_{PL}^{NTI} = [0.15,0.25] \\
+& r_{DP}^0 = [0.65,0.75] \\
+& r_{DP}^{NTI} = [0.4,0.6] \\
+& r_{SV} = [0.05,0.15] \\
+& r_{HM}^0 = [0.15,0.25] \\
+& r_{HM}^{NTI} = [0.45,0.55] \\
+& r_{PLe}^0 = [0.05,0.15] \\
+& r_{PLe}^{NTI} = [0.15,0.25] \\
+& r_{CM}^0 = [0.15,0.25] \\
+& r_{CM}^NTI = [0.35,0.45] \\
+& m_{FT} = [0.0001,0.0015] \\
+& m_{PL} = [0.0001,0.0015] \\
+& m_{DP} = [0.0005,0.0015] \\
+& m_{SV} = [0.0005,0.0015] \\
+& m_{HM}^0 = [0.0005,0.0015] \\
+& m_{HM}^NTI = [0.00005,0.00015] \\
+& m_{PLe} = [0.0002,0.0004] \\
+& m_{CM} = [0.00005,0.00015] \\
+\end{align*}
+
+In this simulation, only the interactions PL-DP and FT-PL are considered trophic. Therefore, we report only $a$ values for these. The FT-PL interaction is not affected by any third species, but the PL-DP interaction is mediated by the presence of HM plants: a higher abundance of HM flowers increases the probabilities that an interaction takes place, therefore increasing its net outcome.
+
+\begin{align*}
+& a_{FT,PL} = [10^{-6},10^{-4}] \\
+& a_{PL,FT} = [-10^{-2},-10^{-4}] \\
+& a_{PL,DP}^0 = [10^{-7},10^{-5}] \\
+& a_{PL,DP}^NTI = [10^{-4},10^{-2}] \\
+& a_{DP,PL}^0 = [-10^{-5},-10^{-7}] \\
+& a_{DP,PL}^NTI = [-10^{-2},-10^{-4}] \\
+\end{align*}
+
+The $N_0$ parameters in previous equations represent a typical average abundance of the non-trophic interactor. These values were taken, when possible, from \cite{Perez-Mellado2000,Perez-Mellado2006}. Diptera densities were approximated based on \cite{Braack1986}:
+
+\begin{align*}
+& N_{PL}^0 = 2189 \\
+& N_{DP}^0 = 150 \\
+& N_{SV}^0 = 3000 \\
+& N_{HM}^0 = 7187 \\
+& N_{PLe}^0 = 187 \\
+& N_{CM}^0 = 10000 \\
+\end{align*}
+
+\section*{Equal Footing Network}
+
+The model is of the form:
+
+\begin{equation}
+\frac{\mathit{dN}_x}{\mathit{dt}}=r_xN_x
+\end{equation}
+
+where
+
+\begin{equation}
+r_x=r_x^0+\sum _{y{\in}S,y{\neq}x}a_{\mathit{xy}}N_y-\left(\beta _x+c_x\sum _{y{\in}S,y{\neq}x}a_{\mathit{xy}}N_y\right)N_x
+\end{equation}
+
+As with the Expanded Food Web model, we constrained each free parameter to a given range and simulated 100000 times the system for 2500 time steps, assigning a random value to each parameter within its range. Here we varied the strength of the antagonistic and facilitative interactions (commensalistic and mutualistic) and checked the stability of the resulting network by means of a local stability analysis.
+
+\begin{align*}
+& r_{FT} = [-0.01,-0.001] \\
+& r_{PL} = [0.01,0.1] \\
+& r_{DP} = [0.4,0.6] \\
+& r_{SV} = [0.05,0.15] \\
+& r_{HM} = [0.15,0.25] \\
+& r_{PLe} = [0.05,0.15] \\
+& r_{CM} = [0.15,0.25] \\
+& \beta_{x} = [10^{-5},10^{-4}] \forall x \\
+& c_x = 10^{-3} \forall x
+\end{align*}
+
+Interaction strengths
+
+1. Weak interactions
+
+\begin{align*}
+& a_{FT,PL} = [10^{-7},10^{-5}] \\
+& a_{PL,FT} = [-10^{-5},-10^{-7}] \\
+& a_{PL,DP} = [10^{-7},10^{-5}] \\
+& a_{PL,HM} = [10^{-7},10^{-5}] \\
+& a_{PL,PLe} = [10^{-7},10^{-5}] \\
+& a_{PL,CM} = [10^{-7},10^{-5}] & \\
+& a_{DP,PL} = [-10^{-5},-10^{-7}] \\
+& a_{DP,HM} = [10^{-7},10^{-5}] \\
+& a_{HM,PL} = [10^{-7},10^{-5}] \\
+& a_{HM,DP} = [10^{-7},10^{-5}] \\
+& a_{PLe,PL} = [10^{-7},-10^{-5}] \\
+& a_{CM,PL} = [10^{-7},-10^{-5}] \\
+\end{align*}
+
+2. Strong antagonisms
+
+\begin{align*}
+& a_{FT,PL} = [10^{-4},10^{-2}] \\
+& a_{PL,FT} = [-10^{-2},-10^{-4}] \\
+& a_{PL,DP} = [10^{-4},10^{-2}] \\
+& a_{PL,HM} = [10^{-7},10^{-5}] \\
+& a_{PL,PLe} = [10^{-7},10^{-5}] \\
+& a_{PL,CM} = [10^{-7},10^{-5}] & \\
+& a_{DP,PL} = [-10^{-2},-10^{-4}] \\
+& a_{DP,HM} = [10^{-7},10^{-5}] \\
+& a_{HM,PL} = [10^{-7},10^{-5}] \\
+& a_{HM,DP} = [10^{-7},10^{-5}] \\
+& a_{PLe,PL} = [10^{-7},-10^{-5}] \\
+& a_{CM,PL} = [10^{-7},-10^{-5}] \\
+\end{align*}
+
+3. Strong facilitation
+
+\begin{align*}
+& a_{FT,PL} = [10^{-7},10^{-5}] \\
+& a_{PL,FT} = [-10^{-5},-10^{-7}] \\
+& a_{PL,DP} = [10^{-7},10^{-5}] \\
+& a_{PL,HM} = [10^{-4},10^{-2}] \\
+& a_{PL,PLe} = [10^{-4},10^{-2}] \\
+& a_{PL,CM} = [10^{-4},10^{-2}] & \\
+& a_{DP,PL} = [-10^{-5},-10^{-7}] \\
+& a_{DP,HM} = [10^{-4},10^{-2}] \\
+& a_{HM,PL} = [10^{-4},10^{-2}] \\
+& a_{HM,DP} = [10^{-4},10^{-2}] \\
+& a_{PLe,PL} = [10^{-4},-10^{-2}] \\
+& a_{CM,PL} = [10^{-4},-10^{-2}] \\
+\end{align*}
