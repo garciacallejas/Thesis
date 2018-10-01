@@ -1,0 +1,265 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DGC Thesis template
+% can be compiled with PDFLaTex
+% options in structure.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+%\documentclass[12pt,letterpaper,twoside,fleqn]{memoir}
+\documentclass[12pt,a4paper,twoside,fleqn]{memoir}
+% Change font size here (allowable values are 9pt-12pt), change the paper size, specify one or two sided printing and specify whether to show trimming lines
+
+%\documentclass[10pt,a4paper,twoside]{memoir} % Change font size here (allowable values are 9pt-12pt), change the paper size, specify one or two sided printing and specify whether to show trimming lines
+
+\input{structure_notrim_small_margins.tex} % Include the file containing the code defining the structure and style of the document
+
+%------------------------------------------------
+% Thesis Information
+
+\title{Structure and Dynamics of Ecological Networks with Multiple Interaction Types} % Thesis title
+
+\author{David García Callejas} % Author name
+
+\date{September 2018} % The date
+
+\newcommand{\institution}{Universitat Autònoma de Barcelona\xspace} % University/institution name
+
+\newcommand{\department}{Centre de Recerca Ecològica i Aplicacions Forestals\xspace} % Department name
+
+%------------------------------------------------
+% Fonts
+
+\renewcommand*{\acffont}[1]{{\normalsize\itshape #1}} % Font style for the acronym text (e.g. Do It Yourself)
+\renewcommand*{\acfsfont}[1]{{\normalsize\upshape #1}} % Font style for the acronym in bracket (e.g. (DIY))
+
+%------------------------------------------------
+% Hyphenations
+
+\hyphenation{} % Specify custom hyphenation points in words with dashes where you would like hyphenation to occur, or alternatively, don't put any dashes in a word to stop hyphenation altogether
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\renewcommand{\maketitlehooka}{
+\centering
+% institution logo(s)
+%\includegraphics[width=7cm]{Figures/intro/UAB_logo_color}\\[.8cm]
+\includegraphics[width=.75\textwidth]{Figures/intro/CREAF-UAB.png}\\[.8cm]
+\institution\\ % Print institution name
+\emph{\department}\\[.2cm] % Print department name
+DOCTORADO EN ECOLOGIA TERRESTRE % Degree or other information
+\par
+\hrulefill
+\vfill}
+\renewcommand{\maketitlehookb}{\vfill}
+\renewcommand{\maketitlehookc}{
+\vfill
+\begin{flushleft}
+Advisors:\\
+\textbf{Dr. Miguel Bastos Araújo}\\ % Advisor's/supervisor's name
+\textbf{Dr. Roberto Molowny Horas}\\[.3cm] % Advisor's/supervisor's name
+Tutor:\\
+\textbf{Dr. Javier Retana Alumbreros}\\[.3cm] % Tutor's name
+%Supervisor of the Doctoral Program:\\
+%\textbf{Prof. Patrizio Colaneri} % Doctoral program supervisor's name
+\end{flushleft}
+\vfill}
+\preauthor{\begin{flushright}Doctoral Dissertation of:\\\bfseries} % Text prior to the author name - right aligned and bold
+\postauthor{\end{flushright}} % After the author name, stop right alignment
+
+%----------------------------------------------------------------------------------------
+
+\makeindex % Write an index file
+
+\begin{document}
+
+\begin{titlingpage}
+\maketitle % Print the title page
+\end{titlingpage}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+%----------------------------------------------------------------------------------------
+%	PREFACE
+%----------------------------------------------------------------------------------------
+
+\section*{Acknowledgements}
+
+All human endeavours are collaborative, we all grow when surrounded by the ones we love and admire. This thesis carries, directly or indirectly, the imprint of many people that have shared with me parts of this journey. Academically, I am extremely grateful to Roberto and Miguel, for their help and advice throughout these years. At CREAF-UAB, I would like to thank the whole team for such a great atmosphere, and in particular Pep Piñol, Raúl García-Valdés, Jordi Martínez-Vilalta, Miquel Ninyerola, Llorenç Sáez and Mariona Ferrandiz for offering me the opportunity to participate in teaching activities, and Yolanda Melero and Alberto Navarro for collaborating in these duties.
+
+Dominique Gravel has been immensely helpful in the last part of the thesis, and I am honored to have been able to collaborate with him. Huge thanks also to the whole team at Sherbrooke, in particular to Guillaume Blanchet, who made everything easier during my stay.
+
+Several other people have helped in different ways during the development of this thesis, and here I want to specially thank Manuel Mendoza, José Manuel Herrera, and Pipo Roces.
+
+Aside from the colleagues who have helped me along the way, I think it's necessary to acknowledge the work of many people from which I have benefited. Publicly available ecological datasets such as the ones used in chapter 4 are the result of the effort of countless technicians and volunteers, alongside researchers. Likewise, the R community and, in general, the open software movement, have shown me that it is completely possible to develop robust, reproducible science without resorting to proprietary software at all. I am, all ecologists are, in debt with the communities that provide these basic tools and data for our work.
+
+I am purposely keeping these acknowledgements in the academic side of things. At a personal level, the imprint is even more important, and I could not have carried out this thesis without the love and support of those close to me. Thanks to all of you.
+
+\begin{flushright}
+%\textsc{\theauthor}\\
+Barcelona\\
+September 2018
+\end{flushright}
+
+\cleartoverso % Force a break to an even page
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+
+Organisms survive, thrive and reproduce by interacting with individuals of their own and of other species. Biotic interactions are extremely diverse in type, magnitude, or spatiotemporal scale, and give rise to ecological networks with complex topologies and dynamics. Such networks of ecological interactions have been shown to possess non-random structural properties that enhance their resilience and robustness to perturbations, and thus are key elements for understanding the response of species to external forcing such as environmental change or habitat loss.
+
+Despite the importance of interaction networks in studies of ecological communities, and due in part to their sheer variability, ecological interactions are notoriously difficult to document and quantify in a comprehensive fashion. Therefore, historically, studies of ecological networks have focused on the most easily observable types of interactions, those between predators and their prey, or more generally speaking, between consumers and resources. In the last decades, studies of mutualistic networks have also risen to prominence and have demonstrated, for example, that food webs and mutualistic networks have markedly different topologies and this has both ecological and evolutionary consequences for the species involved. One of the main challenges of contemporary community ecology is to expand our understanding of networks of a single interaction type to a more realistic view of ecological communities, by considering how different interactions mutually influence community structure and functioning. In order to tackle this challenge, a first step is to lay down overarching theoretical hypotheses about such complex networks.
+
+In this thesis I approach this general objective and analyse a series of fundamental questions about ecological networks. After a general introduction, first I synthesise current methodologies for developing theoretical network models. I find that three main conceptual approaches have been used, and discuss their relative strengths, weaknesses, and potential uses. Second, I study whether species persistence in model communities is influenced by the frequency and distribution of the different interaction types. The prevalence of positive interactions within a community is shown to be key for species-poor communities, whereas in more speciose communities, different combinations of interactions can occur without affecting species persistence in a significant way. Furthermore, networks with randomly distributed interactions show less species persistence than structured networks. If community structure is important for species persistence, it follows that other community-level patterns should also be affected by it. In the fourth chapter, I focus on Species Abundance Distributions (SADs), one of the most studied patterns in community ecology, and ask whether their shape varies in a consistent way for the different trophic guilds of a community. I compare theoretical expectations with SADs from empirical datasets, and find that SADs of plant communities are significantly less even and more skewed than SADs from mammal ones. Among mammal trophic guilds, there are no significant differences in the evenness or skewness of their SADs. These first chapters deal with the structure and dynamics of closed communities, aiming to establish baseline hypotheses. In the fifth chapter, I incorporate another degree of complexity, namely the spatial perspective. Specifically, I analyse how interaction effects are propagated in space, such that interactions occurring in a local community may influence other communities connected to it by means of dispersing or foraging individuals. Given the novelty of this analysis and the long tradition of food web models, in this chapter I focus on trophic communities as a simplified model system. I find that the distribution of net effects of a species over another across the metacommunity is significantly different if the local communities are connected by dispersal, foraging, or a mixture of both. In the sixth chapter, I tackle the long-standing question of the variability of species interactions across environmental gradients. For approaching this question, I recover the distinction, originally proposed by G.E. Hutchinson, about scenopoetic and bionomic environmental factors, i.e. non-resource and resource factors. By recognizing that these two types of environmental factors have different effects on species fitness and on the importance of species’ pairwise interactions, I analyse the prevalence of positive and negative interactions in model communities across a two-dimensional environmental gradient with one resource and one non-resource factor. I find that, according to the expectations, positive interactions respond to the non-resource factor, whereas negative interactions vary across the two axis of the gradient, with consequences for average persistence time and species diversity across the combined gradient.
+
+\end{abstract}
+
+\clearpage
+%\cleartoverso % Force a break to an even page
+
+%----------------------------------------------------------------------------------------
+%	chapter status
+%----------------------------------------------------------------------------------------
+
+\section*{Article references}
+
+\begin{itemize}
+  \item \textbf{Chapter 2:} \\
+  García‐Callejas, D., Molowny‐Horas, R., \& Araújo, M. B. (2018). Multiple interactions networks: towards more realistic descriptions of the web of life. \textit{Oikos}, 127, 5-22. doi: 10.1111/oik.04428
+  \item \textbf{Chapter 3:} \\
+  García‐Callejas, D., Molowny‐Horas, R., \& Araújo, M. B. The effect of multiple biotic interaction types on species persistence. \textit{Ecology} (in press). doi: 10.1002/ecy.2465
+  \item \textbf{Chapter 4:} \\
+  García‐Callejas, D. On the variability of Species Abundance Distributions with trophic guild and community structure. Under review in \textit{Global Ecology and Biogeography}
+  \item \textbf{Chapter 5:} \\
+  García‐Callejas, D., Gravel, D., Molowny‐Horas, R., \& Araújo, M. B. Manuscript in preparation.
+  \item \textbf{Chapter 6:} \\
+  García‐Callejas, D., Molowny‐Horas, R., \& Araújo, M. B. Manuscript in preparation.
+\end{itemize}
+
+N.B.: the code used to generate the results of the different chapters is on the process of being cleaned up, and will be uploaded in its entirety to a public repository, at https://github.com/DavidGarciaCallejas/. As of 20/09/2018, most of the functions related to the model of chapter 3, and the full R code for replicating the results of chapters 4, 5, and 6, are already available. Likewise, the latex files for generating this document are also available. The illustrations for the heading pages of the chapters are all in the public domain, and the authors/name of the works are:
+
+\begin{itemize}
+\item Introduction: Haboku Sansui, by Sesshū Tōyō
+\item Chapter 2: El Perro, by Francisco de Goya
+\item Chapter 3: Street art by El Niño de las Pinturas
+\item Chapter 4: Street art by El Niño de las Pinturas
+\item Chapter 5: Crow and the Moon, by Kawanabe Kyōsai
+\item Chapter 6: Photograph of Cerro Huenes, Granada, taken by the author
+\item General Discussion: Photograph of a road in Nicaragua, taken by the author
+\end{itemize}
+
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\tableofcontents* % Print the table of contents
+
+%\cleartoverso % Force a break to an even page
+\clearpage
+%----------------------------------------------------------------------------------------
+%	LIST OF FIGURES
+%----------------------------------------------------------------------------------------
+
+\listoffigures % Print the list of figures
+
+%\cleartoverso % Force a break to an even page
+
+%----------------------------------------------------------------------------------------
+%	LIST OF TABLES
+%----------------------------------------------------------------------------------------
+
+\listoftables % Print the list of tables
+
+%\cleartoverso % Force a break to an even page
+
+%----------------------------------------------------------------------------------------
+%	ACRONYMS
+%----------------------------------------------------------------------------------------
+
+%\include{acronyms} % Include a List of Acronyms section using acronyms.tex where they are defined
+
+%\cleartoverso % Force a break to an even page
+
+%----------------------------------------------------------------------------------------
+%	COLOPHON
+%----------------------------------------------------------------------------------------
+
+%\thispagestyle{empty} % Remove all headers and footers from this page
+%
+%\vspace*{2em}
+%\renewcommand{\abstractname}{Colophon}
+%\begin{abstract}
+% some text
+%\end{abstract}
+%\vfill
+
+%----------------------------------------------------------------------------------------
+%	CONTENT CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\chapterstyle{thesis} % Change the style of the Chapter header to that defined in structure.tex
+
+\pagestyle{Ruled} % Include the chapter/section in the header along with a horizontal rule underneath
+
+\include{Chapters/Chapter01_intro}
+\include{Chapters/Chapter02}
+\include{Chapters/Chapter03}
+\include{Chapters/Chapter04}
+\include{Chapters/Chapter05}
+\include{Chapters/Chapter06}
+\include{Chapters/Chapter07_discussion}
+
+\backmatter
+
+\chapterstyle{default} % Reset the chapter style back to the default used for non-content chapters
+
+%----------------------------------------------------------------------------------------
+%	APPENDICES
+%----------------------------------------------------------------------------------------
+\include{Chapters/Appendix_2_1}
+\include{Chapters/Appendix_2_2}
+\include{Chapters/Appendix_2_3}
+
+\include{Chapters/Appendix_3_1}
+\include{Chapters/Appendix_3_2}
+\include{Chapters/Appendix_3_3}
+\include{Chapters/Appendix_3_4}
+
+\include{Chapters/Appendix_4_1}
+
+\include{Chapters/Appendix_5_1}
+
+\include{Chapters/Appendix_6_1}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+% References - set bibliography style
+\bibliographystyle{amnat}
+%\bibliographystyle{plainnat} % Use the plainnat bibliography style
+
+% create reference list
+%\bibliography{full_library_server}
+\bibliography{full_library}
+
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+\printindex % Print the index
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
