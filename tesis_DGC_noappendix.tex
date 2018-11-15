@@ -9,13 +9,13 @@
 %----------------------------------------------------------------------------------------
 
 %\documentclass[12pt,letterpaper,twoside,fleqn]{memoir}
-\documentclass[12pt,a4paper,twoside,fleqn]{memoir}
+\documentclass[10pt,a4paper,twoside,fleqn,showtrims]{memoir}
 % Change font size here (allowable values are 9pt-12pt), change the paper size, specify one or two sided printing and specify whether to show trimming lines
 
 %\documentclass[10pt,a4paper,twoside]{memoir} % Change font size here (allowable values are 9pt-12pt), change the paper size, specify one or two sided printing and specify whether to show trimming lines
 
-\input{structure_notrim_small_margins.tex} % Include the file containing the code defining the structure and style of the document
-%\input{structure_book_08reduction.tex} % Include the file containing the code defining the structure and style of the document
+%\input{structure_notrim_small_margins.tex} % Include the file containing the code defining the structure and style of the document
+\input{structure_book_08reduction_centered.tex} % Include the file containing the code defining the structure and style of the document
 
 %------------------------------------------------
 % Thesis Information
@@ -144,7 +144,13 @@ In this thesis I approach this general objective and analyse a series of fundame
   García‐Callejas, D., Molowny‐Horas, R., \& Araújo, M. B. Manuscript in preparation.
 \end{itemize}
 
-N.B.: the code used to generate the results of the different chapters is on the process of being cleaned up, and will be uploaded in its entirety to a public repository, at https://github.com/DavidGarciaCallejas/. As of 20/09/2018, most of the functions related to the model of chapter 3, and the full R code for replicating the results of chapters 4, 5, and 6, are already available. Likewise, the latex files for generating this document are also available. The illustrations for the heading pages of the chapters are all in the public domain, and the authors/name of the works are:
+\section*{Supplementary materials}
+
+In the printed version, the appendices of all chapters have been omitted due to their length. These can be consulted in the online version of the dissertation (see below). In the main text, supplementary figures and tables are referred to as \textit{Appendix A.X: material A.X.Y}.
+
+\section*{Data and code availability}
+
+The code used to generate the results of the different chapters is on the process of being cleaned up, and will be uploaded in its entirety to a public repository, at https://github.com/DavidGarciaCallejas/. As of 20/09/2018, most of the functions related to the model of chapter 3, and the full R code for replicating the results of chapters 4, 5, and 6, are already available. Likewise, a repository with the latex files for generating this document is also available. Furthermore, the complete dissertation is also available at the official dissertation repository of the Consortium of Catalan University Services, at www.tdx.cat. The illustrations for the heading pages of the chapters are all in the public domain, and the authors/name of the works are:
 
 \begin{itemize}
 \item Introduction: Haboku Sansui, by Sesshū Tōyō
@@ -213,13 +219,21 @@ N.B.: the code used to generate the results of the different chapters is on the 
 
 \pagestyle{Ruled} % Include the chapter/section in the header along with a horizontal rule underneath
 
-\include{Chapters/Chapter01_intro}
-\include{Chapters/Chapter02}
-\include{Chapters/Chapter03}
-\include{Chapters/Chapter04}
-\include{Chapters/Chapter05}
-\include{Chapters/Chapter06}
-\include{Chapters/Chapter07_discussion}
+%\include{Chapters/Chapter01_intro}
+%\include{Chapters/Chapter02}
+%\include{Chapters/Chapter03}
+%\include{Chapters/Chapter04}
+%\include{Chapters/Chapter05}
+%\include{Chapters/Chapter06}
+%\include{Chapters/Chapter07_discussion}
+
+\include{Chapters/Chapter01_intro_noappendix}
+\include{Chapters/Chapter02_noappendix}
+\include{Chapters/Chapter03_noappendix}
+\include{Chapters/Chapter04_noappendix}
+\include{Chapters/Chapter05_noappendix}
+\include{Chapters/Chapter06_noappendix}
+\include{Chapters/Chapter07_discussion_noappendix}
 
 \backmatter
 
@@ -228,20 +242,20 @@ N.B.: the code used to generate the results of the different chapters is on the 
 %----------------------------------------------------------------------------------------
 %	APPENDICES
 %----------------------------------------------------------------------------------------
-\include{Chapters/Appendix_2_1}
-\include{Chapters/Appendix_2_2}
-\include{Chapters/Appendix_2_3}
+%\include{Chapters/Appendix_2_1}
+%\include{Chapters/Appendix_2_2}
+%\include{Chapters/Appendix_2_3}
 
-\include{Chapters/Appendix_3_1}
-\include{Chapters/Appendix_3_2}
-\include{Chapters/Appendix_3_3}
-\include{Chapters/Appendix_3_4}
+%\include{Chapters/Appendix_3_1}
+%\include{Chapters/Appendix_3_2}
+%\include{Chapters/Appendix_3_3}
+%\include{Chapters/Appendix_3_4}
 
-\include{Chapters/Appendix_4_1}
+%\include{Chapters/Appendix_4_1}
 
-\include{Chapters/Appendix_5_1}
+%\include{Chapters/Appendix_5_1}
 
-\include{Chapters/Appendix_6_1}
+%\include{Chapters/Appendix_6_1}
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
@@ -259,7 +273,7 @@ N.B.: the code used to generate the results of the different chapters is on the 
 %	INDEX
 %----------------------------------------------------------------------------------------
 
-\printindex % Print the index
+%\printindex % Print the index
 
 %----------------------------------------------------------------------------------------
 
