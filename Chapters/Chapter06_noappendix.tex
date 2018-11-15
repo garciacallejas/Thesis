@@ -2,8 +2,8 @@
 \chapter[Interactions and environmental factors]{Community responses to resource and non-resource environmental gradients}\label{ch:environment}
 %************************************************
 
-\tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{./Figures/cover/granada_2_pagina.jpg}};
-%\tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at ([yshift=6cm]current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{./Figures/cover/granada_2_pagina.jpg}};
+%\tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{./Figures/cover/granada_2_pagina.jpg}};
+\tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at ([yshift=3cm,xshift=2cm]current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{./Figures/cover/granada_2_pagina.jpg}};
 \clearpage
 
 \section*{Abstract}
@@ -50,9 +50,9 @@ Gradients in resource factors will drive variations in exploitative competition 
 
 The basic tenets presented above apply, all else being equal, to gradients of only one factor at a time. However, it is harder to derive conceptual predictions about variations across combined gradients of both types. Using a simple community model, we analysed whether variations in two environmental factors, a resource and a non-resource one, drive variations in different patterns of a horizontal community (composed of a single trophic guild). We generated a pool of species with varying demographic responses to non-resource stress factors, following the functional responses discussed in \cite{Maestre2009}, in which species vary their survival and growth rates according to the level of non-resource stress (Appendix 6.1). The two extreme cases in this framework are, on the one hand, stress-tolerant species, that are able to maintain comparatively high survival rates under high stress levels, but display lower growth rates in the absence of stress; and competitive species on the other hand, that show high growth rates under benign conditions but also higher sensitivity in both survival and growth rates to non-resource stress.
 
-In our model setting, environmental variability is represented by a two-dimensional lattice, in which each cell has a combination of resource and non-resource environmental factors (\cref{fig:figApp6.1.1}). The resource factor is represented as the carrying capacity of the cell, and all species are assumed to belong to the same trophic guild (sensu \citealt{Fauth1996}), whose only limiting factor is that resource. The non-resource factor is homogeneous and constant in a given cell. Both gradients are linear.
+In our model setting, environmental variability is represented by a two-dimensional lattice, in which each cell has a combination of resource and non-resource environmental factors (Appendix A.6.1: Figure A.6.1.1). The resource factor is represented as the carrying capacity of the cell, and all species are assumed to belong to the same trophic guild (sensu \citealt{Fauth1996}), whose only limiting factor is that resource. The non-resource factor is homogeneous and constant in a given cell. Both gradients are linear.
 
-Species randomly colonize with equal probability any given cell of the lattice, and survive and grow according to their specific functional responses (\cref{fig:figApp6.1.2}). A fraction of species is able to facilitate the survival of heterospecifics, by enhancing their survival probability in the face of high levels of non-resource stress. The intensity of each facilitation event is given by the biomass of the benefited individual, that would have otherwise not survived.
+Species randomly colonize with equal probability any given cell of the lattice, and survive and grow according to their specific functional responses (Appendix A.6.1: Figure A.6.1.2). A fraction of species is able to facilitate the survival of heterospecifics, by enhancing their survival probability in the face of high levels of non-resource stress. The intensity of each facilitation event is given by the biomass of the benefited individual, that would have otherwise not survived.
 
 Individuals in a cell are able to grow up to the level where their aggregated biomass equals the carrying capacity of the cell, i.e. the level of resource factor. Competition occurs when the growth of one or more individuals is hampered due to the presence of another individual, and its intensity is given by the amount of expected growth that was impeded by the competitive exclusion.
 
@@ -64,7 +64,7 @@ We also performed simulations with the same parameterization but not allowing fo
 
 \subsection*{Does the intensity of competitive and facilitative interactions vary across a combined resource and non-resource environmental gradient?}
 
-The intensity of competition and facilitation strongly varies across the combined environmental gradient (Fig. \ref{fig:fig6.2}, Table \ref{tab:tab6.1}). Competition intensity increases with increasing resource stress (Fig. \ref{fig:fig6.2}, panel a) and with decreasing non-resource stress (Fig. \ref{fig:fig6.2}, panel b), and the interaction between resource and non-resource stress is also statistically significant (Table \ref{tab:tab6.1}). Facilitation intensity, in turn, is only significantly influenced by non-resource stress (Table \ref{tab:tab6.1}, Fig. \ref{fig:fig6.2}, panel c and d). In absence of stress, there is no facilitation, as every species has a survival probability of 1 (\cref{fig:figApp6.1.2}). Then, as non-resource stress increases, facilitation intensity displays a concave parabolic shape: it is high and very variable for low levels of stress, lowest for intermediate levels, and consistently high and comparatively less variable for high stress levels.
+The intensity of competition and facilitation strongly varies across the combined environmental gradient (Fig. \ref{fig:fig6.2}, Table \ref{tab:tab6.1}). Competition intensity increases with increasing resource stress (Fig. \ref{fig:fig6.2}, panel a) and with decreasing non-resource stress (Fig. \ref{fig:fig6.2}, panel b), and the interaction between resource and non-resource stress is also statistically significant (Table \ref{tab:tab6.1}). Facilitation intensity, in turn, is only significantly influenced by non-resource stress (Table \ref{tab:tab6.1}, Fig. \ref{fig:fig6.2}, panel c and d). In absence of stress, there is no facilitation, as every species has a survival probability of 1 (Appendix A.6.1: Figure A.6.1.2). Then, as non-resource stress increases, facilitation intensity displays a concave parabolic shape: it is high and very variable for low levels of stress, lowest for intermediate levels, and consistently high and comparatively less variable for high stress levels.
 
 \clearpage
 \begin{landscape}
@@ -81,25 +81,16 @@ Response                                                                        
                                                                                        &                          &                          &                         & s(resource)              & -         & -          & -      & 3.28  & 7405   & $< 0.05$ \\
                                                                                        &                          &                          &                         & s(non-resource)          & -         & -          & -      & 12.53 & 1813.5 & $< 0.05$ \\
                                                                                        &                          &                          &                         & s(resource*non-resource) & -         & -          & -      & 25    & 262.4  & $< 0.05$ \\
-\multirow{3}{*}{persistence times}                                                     & \multirow{3}{*}{7451.8}  & \multirow{3}{*}{0.986}   & \multirow{3}{*}{98.6\%} & intercept                & 26.18     & 0.217      & 120.71 & -     & -      & $< 0.05$ \\
+\multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}persistence\\ times\end{tabular}}                                                     & \multirow{3}{*}{7451.8}  & \multirow{3}{*}{0.986}   & \multirow{3}{*}{98.6\%} & intercept                & 26.18     & 0.217      & 120.71 & -     & -      & $< 0.05$ \\
                                                                                        &                          &                          &                         & resource                 & $2.2*10^{-3}$  & $3.5*10^{-3}$   & -0.625 & -     & -      & 0.532          \\
                                                                                        &                          &                          &                         & s(non-resource)          & -         & -          & -      & 14.29 & 10741  & $< 0.05$ \\
-\multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}effective number\\ of species\end{tabular}} & \multirow{3}{*}{4127.2}  & \multirow{3}{*}{0.922}   & \multirow{3}{*}{92.2\%} & intercept                & 4.828     & 0.057      & 83.92  & -     & -      & $< 0.05$ \\
+\multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}effective\\ richness\end{tabular}} & \multirow{3}{*}{4127.2}  & \multirow{3}{*}{0.922}   & \multirow{3}{*}{92.2\%} & intercept                & 4.828     & 0.057      & 83.92  & -     & -      & $< 0.05$ \\
                                                                                        &                          &                          &                         & resource                 & -0.016    & $9.4*10^{-4}$   & -16.64 & -     & -      & $< 0.05$ \\
                                                                                        &                          &                          &                         & s(non-resource)          & -         & -          & -      & 10.36 & 2355   & $< 0.05$
 %\hline
 \end{tabular}
 
 \end{table}
-\end{landscape}
-
-\subsection*{How are species diversity and persistence affected by the environmental variation?}
-
-The effective number of species at each cell drops rapidly with even slight increases in non-resource stress (Fig. \ref{fig:fig6.2}, panel f), and also shows a decreasing trend, although less steep, with increasing resource stress (Fig. \ref{fig:fig6.2}, panel e). Average persistence time, in turn, also decreases very sharply with non-resource stress (Fig. \ref{fig:fig6.2}, panel h), but is unaffected by resource stress (table \ref{tab:tab6.1}, Fig. \ref{fig:fig6.2}, panel g).
-
-\subsection*{Does the presence of benefactor species increase species diversity and persistence in our model communities?}
-
-Both species diversity and persistence times are significantly higher in simulations with facilitation (Table \ref{tab:tab6.2}, \cref{fig:figApp6.1.4}).
 
 \begin{table}[]
 \caption[Facilitation impacts]{\color{Gray}Results of the Wilcoxon signed-rank tests for differences in competition intensity, species diversity, and average persistence times between communities with and without facilitation. Test on competition intensity is two-tailed, reflecting our lack of previous hypotheses on the intensity of competitive effects between the two sets of simulations. Tests on species diversity and persistence are one-tailed, with the alternative hypothesis being greater values of both metrics when facilitation is allowed. In bold, highest median values of each quantity.}\label{tab:tab6.2}
@@ -108,12 +99,22 @@ Both species diversity and persistence times are significantly higher in simulat
  & median - facilitation & median - no facilitation & V & p-value \\
 \hline
 \begin{tabular}[c]{@{}l@{}}competition\\ intensity\end{tabular} & \textbf{0.059} & 0.050 & 1229233 & $< 0.05$ \\
-persistence time & \textbf{15.47} & 12.369 & 2401500 & $< 0.05$ \\
-\begin{tabular}[c]{@{}l@{}}effective number\\ of species\end{tabular} & \textbf{2.374} & 2.067 & 2600200 & $< 0.05$
+persistence times & \textbf{15.47} & 12.369 & 2401500 & $< 0.05$ \\
+effective richness & \textbf{2.374} & 2.067 & 2600200 & $< 0.05$
 %\hline
 \end{tabular}
 
 \end{table}
+
+\end{landscape}
+
+\subsection*{How are species diversity and persistence affected by the environmental variation?}
+
+The effective number of species at each cell drops rapidly with even slight increases in non-resource stress (Fig. \ref{fig:fig6.2}, panel f), and also shows a decreasing trend, although less steep, with increasing resource stress (Fig. \ref{fig:fig6.2}, panel e). Average persistence time, in turn, also decreases very sharply with non-resource stress (Fig. \ref{fig:fig6.2}, panel h), but is unaffected by resource stress (table \ref{tab:tab6.1}, Fig. \ref{fig:fig6.2}, panel g).
+
+\subsection*{Does the presence of benefactor species increase species diversity and persistence in our model communities?}
+
+Both species diversity and persistence times are significantly higher in simulations with facilitation (Table \ref{tab:tab6.2}, Appendix A.6.1: Figure A.6.1.4).
 
 \begin{figure}[ht]
 \includegraphics[width=\textwidth]{./Figures/chapter06/Fig_2.png}
@@ -131,9 +132,9 @@ Facilitation is, again as we hypothesised, clearly driven by variations in the n
 
 In this first approximation to the concurrent modelling of resource and non-resource environmental gradients, we defined a single resource factor as a carrying capacity, and did not account for more complex relationships that allow facilitation of resource factors. For example, it is well established that, although species compete for water in stressful environments, nurse species can facilitate water acquisition by heterospecifics under different circumstances, listed in \cite{Maestre2009}: by lifting water from belowground, by providing shade that retains moisture, and, again as a byproduct of shade provision, by modifying water-relations of the understorey species. Aside from the important example of water, it is nevertheless clear that most resource factors shared by species of a certain guild (i.e. light, space, nutrients) are generally not facilitated by species of that guild, and hence the prevalence and intensity of facilitation should, in most cases, conform to the hypothesis laid out here.
 
-Species diversity and persistence are highly sensitive to variations in the non-resource factor, and this is mainly due to the shape of the physiological responses to non-resource stress that we modelled (\cref{fig:figApp6.1.2}). Less steep declines in survival or growth probability would smooth the responses to increasing stress. We carried out additional simulations (not shown here) and observed that higher variation between purely competitive and purely stress-tolerant species did indeed increase the steepness of the diversity and persistence responses. Nevertheless, the overall trends were qualitatively robust to the different parameterizations, and should hold as long as competitive species are comparatively more sensitive to stress.
+Species diversity and persistence are highly sensitive to variations in the non-resource factor, and this is mainly due to the shape of the physiological responses to non-resource stress that we modelled (Appendix A.6.1: Figure A.6.1.2). Less steep declines in survival or growth probability would smooth the responses to increasing stress. We carried out additional simulations (not shown here) and observed that higher variation between purely competitive and purely stress-tolerant species did indeed increase the steepness of the diversity and persistence responses. Nevertheless, the overall trends were qualitatively robust to the different parameterizations, and should hold as long as competitive species are comparatively more sensitive to stress.
 
-Despite facilitation being present at high levels of non-resource stress, species diversity and persistence time both decrease consistently across the non-resource gradient: the negative effects on growth and survival across the species pool are stronger than the benefits of facilitation by stress-tolerant species. Facilitation does, however, increase competition intensity, species diversity and persistence times overall (Table \ref{tab:tab6.2}), with its strongest influence occurring at low to moderate levels of non-resource stress (\cref{fig:figApp6.1.4}).
+Despite facilitation being present at high levels of non-resource stress, species diversity and persistence time both decrease consistently across the non-resource gradient: the negative effects on growth and survival across the species pool are stronger than the benefits of facilitation by stress-tolerant species. Facilitation does, however, increase competition intensity, species diversity and persistence times overall (Table \ref{tab:tab6.2}), with its strongest influence occurring at low to moderate levels of non-resource stress (Appendix A.6.1: Figure A.6.1.4).
 
 In our model, we considered a single non-resource environmental factor and a single resource that is utilised equally by all species and does not deplete. Of course, the picture is much more complex in natural systems, where species consume several resources with varying efficiencies \citep{Chapin1987} and may display contrasting physiological response curves to different non-resource factors \citep{Austin1994}. Furthermore, we are considering here horizontal communities, and the responses discussed will likely be more complex for multi-trophic communities and involve direct and indirect effects on community properties \citep{Menge1987,Bruno2003}. We expect that in communities comprising several guilds and potentially different types of interactions among species, variations in non-resource factors will (1) directly affect all species regardless of their position in the community, and (2) those effects will not be homogeneous. In particular, it is expected that species up in the trophic chain will be comparatively more sensitive to environmental variability \citep{Voigt2003}. Therefore, as a first hypothesis, we suggest that non-resource environmental gradients will trigger both direct effects on all trophic guilds and also significant top-down indirect effects on community structure and dynamics. In turn, variations in resource factors can be expected to affect more significantly lower trophic levels, since species of higher trophic levels get most of their nutrients from direct consumption of organic matter from lower trophic levels. As such, we hypothesize that the most important effect on community structure and dynamics across non-resource environmental gradients will be through bottom-up control.
 
